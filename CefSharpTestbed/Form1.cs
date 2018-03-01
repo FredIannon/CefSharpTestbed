@@ -29,7 +29,7 @@ namespace CefSharpTestbed
             chromeBrowser = new ChromiumWebBrowser("http://www.google.com");
 
             // Add it to the form and fill it to the form window.
-            Controls.Add(chromeBrowser);
+            pnlCefSharp.Controls.Add(chromeBrowser);
 
             // Just giving it a big enough size to show everything
             ClientSize = new System.Drawing.Size(1024, 768);
@@ -40,6 +40,11 @@ namespace CefSharpTestbed
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             Cef.Shutdown();
+        }
+
+        private void btnChromeDevTools_Click(object sender, System.EventArgs e)
+        {
+            chromeBrowser.ShowDevTools();
         }
     }
 }
