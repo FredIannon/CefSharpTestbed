@@ -81,4 +81,10 @@
   <PropertyGroup>
     <PreBuildEvent>powershell.exe -ExecutionPolicy Unrestricted -f $(ProjectDir)buildui.ps1</PreBuildEvent>
   </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>echo "AngularTestbed PostBuild line 1"
+echo "AngularTestbed PostBuild line 2"
+
+</PostBuildEvent>
+  </PropertyGroup>
 </Project>

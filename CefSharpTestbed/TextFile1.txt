@@ -1,0 +1,2 @@
+﻿This file is only here with its Copy to output directoy: "Copy always"
+so that the PostBuild event fires for CefSharpTestbed for each build...otherwise it doesn't fire if onlt the AngularTestbed changes

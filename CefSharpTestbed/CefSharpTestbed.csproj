@@ -38,6 +38,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <RunPostBuildEvent>Always</RunPostBuildEvent>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -92,6 +95,11 @@
       <Name>AngularTestbed</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="TextFile1.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
@@ -107,6 +115,7 @@
   <Import Project="..\packages\CefSharp.Common.63.0.1\build\CefSharp.Common.targets" Condition="Exists('..\packages\CefSharp.Common.63.0.1\build\CefSharp.Common.targets')" />
   <Import Project="..\packages\CefSharp.WinForms.63.0.1\build\CefSharp.WinForms.targets" Condition="Exists('..\packages\CefSharp.WinForms.63.0.1\build\CefSharp.WinForms.targets')" />
   <PropertyGroup>
-    <PostBuildEvent>powershell -c "echo D | xcopy /E /Y $(SolutionDir)AngularTestbed\dist $(TargetDir)\html"</PostBuildEvent>
+    <PostBuildEvent>powershell -c "echo D | xcopy /E /Y $(SolutionDir)AngularTestbed\dist $(TargetDir)html"
+echo "CefSharpTestbed PostBuild line 2"</PostBuildEvent>
   </PropertyGroup>
 </Project>
